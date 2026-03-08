@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Levian Amos — Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Grain Overlay -->
+  <svg id="grain" aria-hidden="true">
+    <filter id="grain-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+  </svg>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-ring"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <button class="nav-logo mono" onclick="scrollTo('home')">LA_</button>
+    <div class="nav-links">
+      <button class="nav-link mono" data-target="about">about</button>
+      <button class="nav-link mono" data-target="projects">projects</button>
+      <button class="nav-link mono" data-target="skills">skills</button>
+      <button class="nav-link mono" data-target="contact">contact</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-line"></div>
+
+    <div class="fade-in" style="--delay: 0s">
+      <p class="mono hero-available">Available for work — 2025</p>
+    </div>
+    <div class="fade-in" style="--delay: 0.15s">
+      <h1 class="serif hero-name">Levian<br><em>Amos</em></h1>
+    </div>
+    <div class="fade-in hero-bottom" style="--delay: 0.3s">
+      <p class="hero-tagline"><em>I build things for the web.<span class="cursor-blink">|</span></em></p>
+      <div class="mono hero-meta">
+        <div>Full-Stack Developer</div>
+        <div class="gold">Based in San Francisco</div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span class="mono scroll-label">scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-header fade-in">
+      <span class="mono section-num">01</span>
+      <div class="section-rule"></div>
+      <span class="mono section-label">About</span>
+    </div>
+    <div class="about-grid">
+
+      <!-- =============================================
+           PROFILE PHOTO
+           Replace "images/profile.jpg" with your photo.
+           Recommended: square or portrait crop, min 600x600px.
+           Supported formats: jpg, png, webp
+      ============================================= -->
+      <div class="fade-in about-photo-col" style="--delay: 0.05s">
+        <div class="about-photo-wrap">
+          <img
+            src="images/profile.jpg"
+            alt="Levian Amos — profile photo"
+            class="about-photo"
+            onerror="this.parentElement.classList.add('photo-missing')"
+          />
+          <div class="about-photo-placeholder" aria-hidden="true">
+            <span class="mono">photo.jpg</span>
+          </div>
+          <div class="about-photo-border"></div>
+        </div>
+      </div>
+
+      <div class="about-text-col">
+        <div class="fade-in" style="--delay: 0.1s">
+          <h2 class="serif about-heading">Crafting digital<br><em>experiences</em> that<br>matter.</h2>
+        </div>
+        <div class="fade-in" style="--delay: 0.2s">
+          <p class="about-text">I'm a developer obsessed with crafting seamless digital experiences — from pixel-perfect frontends to robust backend architectures. I thrive at the intersection of performance and design.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="serif stat-num">5+</div>
+              <div class="mono stat-label">Years exp.</div>
+            </div>
+            <div class="stat">
+              <div class="serif stat-num">30+</div>
+              <div class="mono stat-label">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="serif stat-num">12</div>
+              <div class="mono stat-label">OSS contribs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-header fade-in">
+      <span class="mono section-num">02</span>
+      <div class="section-rule"></div>
+      <span class="mono section-label">Selected Work</span>
+    </div>
+    <div class="projects-list">
+
+      <!-- =============================================
+           PROJECT IMAGES
+           Replace each src with your screenshot/mockup.
+           Recommended: 16:9 or 4:3 ratio, min 800x500px.
+           File names: images/project-orbit.jpg, etc.
+      ============================================= -->
+
+      <div class="project-row fade-in" style="--delay: 0.1s">
+        <div class="project-inner">
+          <div class="project-thumb-wrap">
+            <img src="images/project-orbit.jpg" alt="Orbit project screenshot" class="project-thumb"
+              onerror="this.parentElement.classList.add('thumb-missing')" />
+            <div class="project-thumb-placeholder mono" aria-hidden="true">orbit.jpg</div>
+          </div>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="serif project-title">Orbit</h3>
+              <span class="mono project-year">2024</span>
+            </div>
+            <p class="project-desc">A real-time collaborative whiteboard with WebSocket sync and conflict-free replicated data types.</p>
+            <div class="project-tags">
+              <span class="skill-tag mono">React</span>
+              <span class="skill-tag mono">WebSockets</span>
+              <span class="skill-tag mono">CRDT</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <span class="mono project-cta-text">VIEW</span>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-row fade-in" style="--delay: 0.2s">
+        <div class="project-inner">
+          <div class="project-thumb-wrap">
+            <img src="images/project-driftwood.jpg" alt="Driftwood project screenshot" class="project-thumb"
+              onerror="this.parentElement.classList.add('thumb-missing')" />
+            <div class="project-thumb-placeholder mono" aria-hidden="true">driftwood.jpg</div>
+          </div>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="serif project-title">Driftwood</h3>
+              <span class="mono project-year">2024</span>
+            </div>
+            <p class="project-desc">Open-source CMS built on a headless architecture. 2k+ GitHub stars. Plugin ecosystem with 50+ extensions.</p>
+            <div class="project-tags">
+              <span class="skill-tag mono">Node.js</span>
+              <span class="skill-tag mono">PostgreSQL</span>
+              <span class="skill-tag mono">REST API</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <span class="mono project-cta-text">VIEW</span>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-row fade-in" style="--delay: 0.3s">
+        <div class="project-inner">
+          <div class="project-thumb-wrap">
+            <img src="images/project-spectra.jpg" alt="Spectra project screenshot" class="project-thumb"
+              onerror="this.parentElement.classList.add('thumb-missing')" />
+            <div class="project-thumb-placeholder mono" aria-hidden="true">spectra.jpg</div>
+          </div>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="serif project-title">Spectra</h3>
+              <span class="mono project-year">2023</span>
+            </div>
+            <p class="project-desc">GPU-accelerated data visualization library for rendering millions of data points in real time.</p>
+            <div class="project-tags">
+              <span class="skill-tag mono">WebGL</span>
+              <span class="skill-tag mono">TypeScript</span>
+              <span class="skill-tag mono">D3</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <span class="mono project-cta-text">VIEW</span>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-row fade-in" style="--delay: 0.4s">
+        <div class="project-inner">
+          <div class="project-thumb-wrap">
+            <img src="images/project-vault.jpg" alt="Vault project screenshot" class="project-thumb"
+              onerror="this.parentElement.classList.add('thumb-missing')" />
+            <div class="project-thumb-placeholder mono" aria-hidden="true">vault.jpg</div>
+          </div>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="serif project-title">Vault</h3>
+              <span class="mono project-year">2023</span>
+            </div>
+            <p class="project-desc">End-to-end encrypted file storage with zero-knowledge architecture and client-side key management.</p>
+            <div class="project-tags">
+              <span class="skill-tag mono">Rust</span>
+              <span class="skill-tag mono">AES-256</span>
+              <span class="skill-tag mono">React</span>
+            </div>
+          </div>
+          <div class="project-cta">
+            <span class="mono project-cta-text">VIEW</span>
+            <span class="project-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-header fade-in">
+      <span class="mono section-num">03</span>
+      <div class="section-rule"></div>
+      <span class="mono section-label">Skills</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group fade-in" style="--delay: 0.1s">
+        <h4 class="serif skill-cat">Frontend</h4>
+        <div class="skill-tags">
+          <span class="skill-tag mono">React</span>
+          <span class="skill-tag mono">TypeScript</span>
+          <span class="skill-tag mono">Next.js</span>
+          <span class="skill-tag mono">Three.js</span>
+          <span class="skill-tag mono">CSS/SASS</span>
+        </div>
+      </div>
+      <div class="skill-group fade-in" style="--delay: 0.2s">
+        <h4 class="serif skill-cat">Backend</h4>
+        <div class="skill-tags">
+          <span class="skill-tag mono">Node.js</span>
+          <span class="skill-tag mono">Python</span>
+          <span class="skill-tag mono">PostgreSQL</span>
+          <span class="skill-tag mono">Redis</span>
+          <span class="skill-tag mono">GraphQL</span>
+        </div>
+      </div>
+      <div class="skill-group fade-in" style="--delay: 0.3s">
+        <h4 class="serif skill-cat">DevOps</h4>
+        <div class="skill-tags">
+          <span class="skill-tag mono">Docker</span>
+          <span class="skill-tag mono">AWS</span>
+          <span class="skill-tag mono">CI/CD</span>
+          <span class="skill-tag mono">Kubernetes</span>
+          <span class="skill-tag mono">Terraform</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-header fade-in">
+      <span class="mono section-num">04</span>
+      <div class="section-rule"></div>
+      <span class="mono section-label">Contact</span>
+    </div>
+    <div class="fade-in" style="--delay: 0.1s">
+      <h2 class="serif contact-heading">Let's build<br><em class="gold">something</em><br>together.</h2>
+    </div>
+    <div class="contact-links fade-in" style="--delay: 0.2s">
+      <a href="mailto:mozelkrypton@gmail.com" class="contact-link mono">
+        <span>✉</span> mozelkrypton@gmail.com
+      </a>
+      <a href="https://github.com/mozelkrypton" class="contact-link mono" target="_blank" rel="noopener">
+        <span>⌥</span> github.com/mozelkrypton
+      </a>
+      <a href="https://www.linkedin.com/in/levian-amos-b584322b7/" class="contact-link mono" target="_blank" rel="noopener">
+        <span>⊞</span> linkedin.com/in/levian-amos
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span class="mono footer-text">© 2025 Levian Amos</span>
+    <span class="mono footer-text">Designed & Built with intent</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
